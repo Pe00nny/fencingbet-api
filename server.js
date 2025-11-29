@@ -24,8 +24,8 @@ const MATCHES = {
     player2: { name: "ИГРОК 2", photo: "" }
   },
   T2: {
-    player1: { name: "ИГРОК 1", photo: "" },
-    player2: { name: "ИГРОК 2", photo: "" }
+    player1: { name: "МИЗЕВ", photo: "" },
+    player2: { name: "БАЙРАМГУЛОВ", photo: "" }
   }
 };
 

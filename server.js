@@ -16,8 +16,8 @@ const MATCHES = {
     player2: { name: "СМЕТАНИН В.", photo: "https://via.placeholder.com/300?text=Сметанин" }
   },
   T8: {
-    player1: { name: "ИГРОК 1", photo: "" },
-    player2: { name: "ИГРОК 2", photo: "" }
+    player1: { name: "ЦЫПИН", photo: "" },
+    player2: { name: "БАЙРАМГУЛОВ", photo: "" }
   },
   T4: {
     player1: { name: "ИГРОК 1", photo: "" },

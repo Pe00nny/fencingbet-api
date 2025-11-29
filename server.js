@@ -1,4 +1,4 @@
-// server.js — простой API для FencingBet
+// server.js — обновлённая версия с поддержкой T4 (2 боя)
 
 const express = require('express');
 const cors = require('cors');
@@ -6,40 +6,55 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Разрешаем запросы с любого сайта (включая твой frontend)
 app.use(cors());
 
-// Данные о матчах — редактируй здесь!
 const MATCHES = {
   T16: {
-    player1: { name: "ПОКАЗАНОВ А.", photo: "https://via.placeholder.com/300?text=Показанов" },
-    player2: { name: "СМЕТАНИН В.", photo: "https://via.placeholder.com/300?text=Сметанин" }
+    type: "single",
+    match: {
+      player1: { name: "ПОКАЗАНОВ А.", photo: "https://via.placeholder.com/300?text=Показанов" },
+      player2: { name: "СМЕТАНИН В.", photo: "https://via.placeholder.com/300?text=Сметанин" }
+    }
   },
   T8: {
-    player1: { name: "ЦЫПИН", photo: "" },
-    player2: { name: "БАЙРАМГУЛОВ", photo: "" }
+    type: "single",
+    match: {
+      player1: { name: "ИВАНОВ К.", photo: "https://via.placeholder.com/300?text=Иванов" },
+      player2: { name: "ПЕТРОВ М.", photo: "https://via.placeholder.com/300?text=Петров" }
+    }
   },
   T4: {
-    player1: { name: "ГРАУДЫНЬ", photo: "" },
-    player2: { name: "МИЗЕВ", photo: "" }
+    type: "double",
+    matches: [
+      {
+        id: 1,
+        player1: { name: "СЕРГЕЕВ А.", photo: "https://via.placeholder.com/300?text=Сергеев" },
+        player2: { name: "ВАСИЛЬЕВ И.", photo: "https://via.placeholder.com/300?text=Васильев" }
+      },
+      {
+        id: 2,
+        player1: { name: "КОЗЛОВ С.", photo: "https://via.placeholder.com/300?text=Козлов" },
+        player2: { name: "РОМАНОВ Д.", photo: "https://via.placeholder.com/300?text=Романов" }
+      }
+    ]
   },
   T2: {
-    player1: { name: "МИЗЕВ", photo: "" },
-    player2: { name: "БАЙРАМГУЛОВ", photo: "" }
+    type: "single",
+    match: {
+      player1: { name: "ФИНАЛИСТ 1", photo: "" },
+      player2: { name: "ФИНАЛИСТ 2", photo: "" }
+    }
   }
 };
 
-// Эндпоинт: GET /api/matches
 app.get('/api/matches', (req, res) => {
   res.json(MATCHES);
 });
 
-// "Заглушка" для корня
 app.get('/', (req, res) => {
-  res.send('FencingBet API активен. Используй /api/matches');
+  res.send('FencingBet API — обновлён для T4 (2 боя)');
 });
 
-// Запуск сервера
 app.listen(PORT, () => {
-  console.log(`Сервер запущен на порту ${PORT}`);
+  console.log(`API запущен на порту ${PORT}`);
 });

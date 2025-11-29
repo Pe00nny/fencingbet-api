@@ -1,0 +1,13 @@
+{
+  "name": "fencingbet-api",
+  "version": "1.0.0",
+  "description": "API для вывода боёв на FencingBet",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

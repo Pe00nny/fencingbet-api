@@ -28,8 +28,8 @@ const MATCHES = {
     matches: [
       {
         id: 1,
-        player1: { name: "СЕРГЕЕВ А.", photo: "https://via.placeholder.com/300?text=Сергеев" },
-        player2: { name: "ВАСИЛЬЕВ И.", photo: "https://via.placeholder.com/300?text=Васильев" }
+        player1: { name: "ЦЫПИН", photo: "https://via.placeholder.com/300?text=Сергеев" },
+        player2: { name: "ИВАННИКОВ", photo: "https://via.placeholder.com/300?text=Васильев" }
       },
       {
         id: 2,

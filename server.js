@@ -41,8 +41,8 @@ const MATCHES = {
   T2: {
     type: "single",
     match: {
-      player1: { name: "ПИДОР", photo: "" },
-      player2: { name: "ГАНДОН", photo: "" }
+      player1: { name: "ФИЛАТОВ М", photo: "" },
+      player2: { name: "БАЙРАМГУЛОВ А", photo: "" }
     }
   }
 };

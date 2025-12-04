@@ -1,4 +1,4 @@
-// server.js — с поддержкой коэффициентов
+// server.js — API для FencingBet с полной поддержкой коэффициентов на обоих бойцов
 
 const express = require('express');
 const cors = require('cors');
@@ -6,14 +6,16 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Разрешаем запросы с любого origin (включая GitHub Pages)
 app.use(cors());
 
+// Данные о матчах и коэффициентах
 const MATCHES = {
   T16: {
     type: "single",
     match: {
-      player1: { name: "ПОКАЗАНОВ А.", photo: "https://via.placeholder.com/300?text=Показанов" },
-      player2: { name: "СМЕТАНИН В.", photo: "https://via.placeholder.com/300?text=Сметанин" },
+      player1: { name: "ИВАНОВ А.", photo: "https://via.placeholder.com/300?text=Иванов" },
+      player2: { name: "СЕРГЕЕВ В.", photo: "https://via.placeholder.com/300?text=Сергеев" },
       odds: {
         "Победа 1": 1.85,
         "Победа 2": 2.10,
@@ -27,8 +29,8 @@ const MATCHES = {
   T8: {
     type: "single",
     match: {
-      player1: { name: "ИВАНОВ К.", photo: "https://via.placeholder.com/300?text=Иванов" },
-      player2: { name: "ПЕТРОВ М.", photo: "https://via.placeholder.com/300?text=Петров" },
+      player1: { name: "ПЕТРОВ К.", photo: "https://via.placeholder.com/300?text=Петров" },
+      player2: { name: "СИДОРОВ М.", photo: "https://via.placeholder.com/300?text=Сидоров" },
       odds: {
         "Победа 1": 2.00,
         "Победа 2": 1.80,
@@ -44,8 +46,8 @@ const MATCHES = {
     matches: [
       {
         id: 1,
-        player1: { name: "СЕРГЕЕВ А.", photo: "https://via.placeholder.com/300?text=Сергеев" },
-        player2: { name: "ВАСИЛЬЕВ И.", photo: "https://via.placeholder.com/300?text=Васильев" },
+        player1: { name: "КОЗЛОВ И.", photo: "https://via.placeholder.com/300?text=Козлов" },
+        player2: { name: "ВАСИЛЬЕВ Д.", photo: "https://via.placeholder.com/300?text=Васильев" },
         odds: {
           "Победа 1": 1.60,
           "Победа 2": 2.40,
@@ -57,8 +59,8 @@ const MATCHES = {
       },
       {
         id: 2,
-        player1: { name: "КОЗЛОВ С.", photo: "https://via.placeholder.com/300?text=Козлов" },
-        player2: { name: "РОМАНОВ Д.", photo: "https://via.placeholder.com/300?text=Романов" },
+        player1: { name: "СМОЛЕНСКИЙ С.", photo: "https://via.placeholder.com/300?text=Смоленский" },
+        player2: { name: "БЕЛОВ А.", photo: "https://via.placeholder.com/300?text=Белов" },
         odds: {
           "Победа 1": 2.20,
           "Победа 2": 1.70,
@@ -87,14 +89,17 @@ const MATCHES = {
   }
 };
 
+// Эндпоинт: отдаём все матчи
 app.get('/api/matches', (req, res) => {
   res.json(MATCHES);
 });
 
+// Корень — для проверки
 app.get('/', (req, res) => {
-  res.send('FencingBet API — с коэффициентами');
+  res.send('FencingBet API — готов к работе с коэффициентами на обоих бойцов');
 });
 
+// Запуск сервера
 app.listen(PORT, () => {
-  console.log(`API запущен на порту ${PORT}`);
+  console.log(`✅ FencingBet API запущен на порту ${PORT}`);
 });

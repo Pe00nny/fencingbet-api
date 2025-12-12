@@ -1,4 +1,4 @@
-// server.js — API для FencingBet с полной поддержкой коэффициентов на обоих бойцов
+// server.js — API для FencingBet с коэффициентами и поддержкой T4
 
 const express = require('express');
 const cors = require('cors');
@@ -6,10 +6,9 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Разрешаем запросы с любого origin (включая GitHub Pages)
 app.use(cors());
+app.use(express.json());
 
-// Данные о матчах и коэффициентах
 const MATCHES = {
   T16: {
     type: "single",
@@ -89,17 +88,15 @@ const MATCHES = {
   }
 };
 
-// Эндпоинт: отдаём все матчи
 app.get('/api/matches', (req, res) => {
   res.json(MATCHES);
 });
 
 // Корень — для проверки
 app.get('/', (req, res) => {
-  res.send('FencingBet API — готов к работе с коэффициентами на обоих бойцов');
+  res.send('FencingBet API — готов к работе');
 });
 
-// Запуск сервера
 app.listen(PORT, () => {
   console.log(`✅ FencingBet API запущен на порту ${PORT}`);
 });

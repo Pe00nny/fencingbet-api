@@ -1,4 +1,4 @@
-// server.js — только ставки на ПОБЕДУ
+// server.js — только ставки на ПОБЕДУ, с минимальными кэфами
 
 const express = require('express');
 const cors = require('cors');

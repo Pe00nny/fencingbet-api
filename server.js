@@ -58,8 +58,8 @@ const MATCHES = {
   T2: {
     type: "single",
     match: {
-      player1: { name: "ЮЖАКОВ", photo: "https://via.placeholder.com/300?text=Южаков" },
-      player2: { name: "ГРОССУЛ", photo: "https://via.placeholder.com/300?text=Гроссул" },
+      player1: { name: "ЮЖАКОВ", photo: "https://i.imgur.com/yuZhak0v.jpg" },
+      player2: { name: "ГРОССУЛ", photo: "https://i.imgur.com/Gr0ssul.jpg" },
       odds: {
         "Победа 1": 1.20,
         "Победа 2": 1.40,

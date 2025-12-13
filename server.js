@@ -24,7 +24,7 @@ const MATCHES = {
   T8: {
     type: "single",
     match: {
-      player1: { name: "ПЕТРОВ К.", photo: "https://via.placeholder.com/300?text=Петров" },
+      player1: { name: "СОКОЛОВ", photo: "https://via.placeholder.com/300?text=Петров" },
       player2: { name: "СИДОРОВ М.", photo: "https://via.placeholder.com/300?text=Сидоров" },
       odds: {
         "Победа 1": 2.00,
